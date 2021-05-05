@@ -1,25 +1,17 @@
 import logo from './logo.svg';
+import React, {useEffect, useRef} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+  const iframeRef = useRef();
+
+  useEffect(() => {
+  console.log({iframeRef: iframeRef.current});
+  },[iframeRef.current])
+
+
+  return <iframe ref={iframeRef} src="https://chats.landbot.io/v3/H-897567-PK2ELDB32ND30V1H/index.html"></iframe>
 }
 
 export default App;
